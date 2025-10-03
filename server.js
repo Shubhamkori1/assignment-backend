@@ -6,14 +6,24 @@ require('express-async-errors');
 
 
 const tasksRouter = require('./src/routes/tasks');
+const authRouter = require('./src/routes/auth');
+
 
 
 const app = express();
-app.use(cors());
+// app.use(cors());
+app.use(cors({
+  origin: 'http://localhost:3000',
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  credentials: true
+}));
+app.options('*', cors());
 app.use(express.json());
 
 
 app.use('/api/tasks', tasksRouter);
+app.use('/api/auth', authRouter);
+
 
 
 app.use((err, req, res, next) => {
