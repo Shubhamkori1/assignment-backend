@@ -13,7 +13,7 @@ const authRouter = require('./src/routes/auth');
 const app = express();
 // app.use(cors());
 app.use(cors({
-  origin: 'http://localhost:3000',
+  origin: 'https://assignment-frontend-akyzpyw3t-shubhamkori1s-projects.vercel.app/',
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   credentials: true
 }));
