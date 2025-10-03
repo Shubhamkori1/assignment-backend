@@ -12,8 +12,13 @@ const authRouter = require('./src/routes/auth');
 
 const app = express();
 // app.use(cors());
+
+const allowedOrigin = "https://assignment-frontend-akyzpyw3t-shubhamkori1s-projects.vercel.app";
+
 app.use(cors({
-  origin: 'https://assignment-frontend-akyzpyw3t-shubhamkori1s-projects.vercel.app',
+  origin: allowedOrigin,
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+  credentials: true
 }));
 app.options('*', cors());
 app.use(express.json());
