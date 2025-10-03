@@ -13,7 +13,7 @@ const authRouter = require('./src/routes/auth');
 const app = express();
 // app.use(cors());
 
-const allowedOrigin = "https://assignment-frontend-akyzpyw3t-shubhamkori1s-projects.vercel.app";
+const allowedOrigin = "['https://assignment-frontend-akyzpyw3t-shubhamkori1s-projects.vercel.app','https://assignment-frontend-wine.vercel.app']";
 
 app.use(cors({
   origin: allowedOrigin,
